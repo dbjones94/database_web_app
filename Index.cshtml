@@ -1,0 +1,26 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center">
+    <img id="Image1" src="~/lib/RN_BusinessUnits.jpg" />
+    <br />
+    <h1 class="display-4">Welcome!</h1>
+    <br>
+    <h5>Please select a table to edit.</h5>
+    <br />
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-2 d-grid">
+            <a class="btn btn-primary btn-lg bg-warning text-black border-warning" href="/Leadership/Index">Leadership</a>
+        </div>
+        <div class="col-sm-2 d-grid">
+            <a class="btn btn-primary btn-lg bg-warning text-black border-warning" href="/RNOffices/Index">RN Offices</a>
+        </div>
+        <div class="col-sm-2 d-grid">
+            <a class="btn btn-primary btn-lg bg-warning text-black border-warning" href="/BHHSOffices/Index">BHHS Offices</a>
+        </div>
+    </div>
+
+</div>

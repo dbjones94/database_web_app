@@ -1,0 +1,146 @@
+﻿@page
+@model HSALeadershipWebApp.Pages.RNOffices.CreateModel
+@{
+    ViewData["Title"] = "Create RN Office";
+}
+
+<br />
+<h2> New RN Office</h2>
+
+@if (Model.errorMessage.Length > 0)
+{
+    <div class="alert alert-warning alert-dismissable fade show" role="alert">
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+<form method="POST">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Company</label>
+        <div class="col-sm-4">
+            <input type="text" placeholder="ReeceNichols" class="form-control" name="company_name" value="@Model.rnofficeInfo.Company_name" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Company ID</label>
+        <div class="col-sm-4">
+            <input type="text" placeholder="RNR" class="form-control" name="company_id" value="@Model.rnofficeInfo.Company_id" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Office</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="office_name" value="@Model.rnofficeInfo.Office_name" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Office ID</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="office_id" value="@Model.rnofficeInfo.Office_id" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Agents</label>
+        <div class="col-sm-4">
+            <input type="text" readonly class="form-control-plaintext" name="agent_count" value="@Model.rnofficeInfo.Agent_count" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Is Open</label>
+        <div class="col-sm-4">
+            <input type="text" placeholder="Y" class="form-control" name="is_open" value="@Model.rnofficeInfo.Is_open" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Address</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="formatted_address" value="@Model.rnofficeInfo.Formatted_address" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Office Phone</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="office_phone_number" value="@Model.rnofficeInfo.Office_phone_number" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Broker First Name</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="mb_first_name" value="@Model.rnofficeInfo.Mb_first_name" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Broker Last Name</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="mb_last_name" value="@Model.rnofficeInfo.Mb_last_name" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Broker Email</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="mb_email_address" value="@Model.rnofficeInfo.Mb_email_address" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Broker Phone</label>
+        <div class="col-sm-4">
+            <input type="text" readonly class="form-control-plaintext" name="mb_mobile_phone" value="@Model.rnofficeInfo.Mb_mobile_phone" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Broker ID</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="mb_id" value="@Model.rnofficeInfo.Mb_id" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Admin First Name</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="admin_first_name" value="@Model.rnofficeInfo.Admin_first_name" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Admin Last Name</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="admin_last_name" value="@Model.rnofficeInfo.Admin_last_name" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Admin Email</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="admin_email_address" value="@Model.rnofficeInfo.Admin_email_address" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Admin Phone</label>
+        <div class="col-sm-4">
+            <input type="text" readonly class="form-control-plaintext" name="admin_mobile_phone" value="@Model.rnofficeInfo.Mb_mobile_phone" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Admin ID</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="admin_id" value="@Model.rnofficeInfo.Admin_id" />
+        </div>
+    </div>
+
+    @if (Model.successMessage.Length > 0)
+    {
+        <div class="row mb-3">
+            <div class="col-sm-9">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>@Model.successMessage</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    }
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-2 d-grid">
+            <button type="submit" class="btn btn-primary bg-warning text-black border-warning">Submit</button>
+        </div>
+        <div class="col-sm-2 d-grid">
+            <a class="btn btn-outline-warning text-black border-warning" href="Index" role="button">Cancel</a>
+        </div>
+    </div>
+</form>

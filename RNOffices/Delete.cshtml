@@ -1,0 +1,30 @@
+﻿@page
+@using System.Data.SqlClient
+
+@{
+    try
+    {
+        string id = Request.Query["id"];
+
+        string connectionString = "Data Source=RANSQL;Initial Catalog=RAN;Persist Security Info=True;User ID=webuser;Password=rn#acc355";
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+
+            string sql = "delete from hsa_rn_office_roster where office_id=@Office_id";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                command.Parameters.AddWithValue("@Office_id", id);
+
+                command.ExecuteNonQuery();
+            }
+        }
+    }
+    catch (Exception ex)
+    {
+
+        throw;
+    }
+
+    Response.Redirect("/RNOffices/Index");
+}

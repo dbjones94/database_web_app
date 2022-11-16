@@ -1,0 +1,108 @@
+﻿@page
+@model HSALeadershipWebApp.Pages.Leadership.CreateModel
+@{
+    ViewData["Title"] = "Create Leader";
+}
+
+<br />
+<h2> New Leader</h2>
+
+@if (Model.errorMessage.Length > 0){
+    <div class="alert alert-warning alert-dismissable fade show" role="alert">
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+<form method="POST">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Employee ID</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="employee_id" value="@Model.leadershipInfo.Employee_id" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">First Name</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="first_name" value="@Model.leadershipInfo.First_name" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Last Name</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="last_name" value="@Model.leadershipInfo.Last_name" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Cell Phone</label>
+        <div class="col-sm-4">
+            <input type="text" readonly class="form-control-plaintext" name="mobile_phone" value="@Model.leadershipInfo.Mobile_phone" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Email</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="email_address" value="@Model.leadershipInfo.Email_address" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Title</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="title" value="@Model.leadershipInfo.Title" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Company</label>
+        <div class="col-sm-4">
+            <input type="text" placeholder="ReeceNichols or BHHS" class="form-control" name="company_name" value="@Model.leadershipInfo.Company_name" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Company ID</label>
+        <div class="col-sm-4">
+            <input type="text" placeholder="RNR or KCR" class="form-control" name="company_id" value="@Model.leadershipInfo.Company_id" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Office ID</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="office_id" value="@Model.leadershipInfo.Office_id" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Office Address</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="office_address" value="@Model.leadershipInfo.Office_address" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Office Phone</label>
+        <div class="col-sm-4">
+            <input type="text" placeholder="If none, leave blank" class="form-control" name="office_phone" value="@Model.leadershipInfo.Office_phone" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Is Active</label>
+        <div class="col-sm-4">
+            <input type="text" placeholder="Y" class="form-control" name="is_active" value="@Model.leadershipInfo.Is_active" />
+        </div>
+    </div>
+
+    @if (Model.successMessage.Length > 0){
+        <div class="row mb-3">
+            <div class="col-sm-9">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>@Model.successMessage</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    }
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-2 d-grid">
+            <button type="submit" class="btn btn-primary bg-warning text-black border-warning">Submit</button>
+        </div>
+        <div class="col-sm-2 d-grid">
+            <a class="btn btn-outline-warning text-black border-warning" href="Index" role="button">Cancel</a>
+        </div>
+    </div>
+</form>

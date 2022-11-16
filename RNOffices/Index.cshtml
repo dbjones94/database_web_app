@@ -1,0 +1,64 @@
+﻿@page
+@model HSALeadershipWebApp.Pages.RNOffices.IndexModel
+@{
+    ViewData["Title"] = "RN Offices";
+}
+
+<br>
+<h2>RN Offices</h2>
+<a class='btn btn-primary btn-sm bg-warning text-black border-warning' href='/RNOffices/Create'>Add RN Office</a>
+<table class="table">
+    <thead>
+        <tr>
+            @*<th>Company</th>
+            <th>Company ID</th>*@
+            <th>Office</th>
+            <th>Office ID</th>
+           @* <th>Agents</th>
+            <th>Is Open</th>
+            <th>Address</th>
+            <th>Office Phone</th>*@
+            <th>Broker First Name</th>
+            <th>Broker Last Name</th>
+            @*<th>Broker Email</th>
+            <th>Broker Phone</th>*@
+            @*<th>Broker ID</th>*@
+            <th>Admin First Name</th>
+            <th>Admin Last Name</th>
+            @*<th>Admin Email</th>
+            <th>Admin Phone</th>
+            <th>Admin ID</th>*@
+            <th>Action</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listRnoffices)
+        {
+            <tr>
+                @*<td>@item.Company_name</td>
+                <td>@item.Company_id</td>*@
+                <td>@item.Office_name</td>
+                <td>@item.Office_id</td>
+                @*<td>@item.Agent_count</td>
+                <td>@item.Is_open</td>
+                <td>@item.Formatted_address</td>
+                <td>@item.Office_phone_number</td>*@
+                <td>@item.Mb_first_name</td>
+                <td>@item.Mb_last_name</td>
+               @* <td>@item.Mb_email_address</td>
+                <td>@item.Mb_mobile_phone</td>
+                <td>@item.Mb_id</td>*@
+                <td>@item.Admin_first_name</td>
+                <td>@item.Admin_last_name</td>
+               @* <td>@item.Admin_email_address</td>
+                <td>@item.Admin_mobile_phone</td>
+                <td>@item.Admin_id</td>*@
+                <td>
+                    <a class="btn btn-primary btn-sm bg-warning text-black border-warning" href="/RNOffices/Edit?id=@item.Office_id">Edit</a>
+                    <a class="btn btn-danger btn-sm" href="/RNOffices/Delete?id=@item.Office_id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

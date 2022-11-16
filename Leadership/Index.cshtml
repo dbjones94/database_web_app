@@ -1,0 +1,51 @@
+﻿@page
+@model HSALeadershipWebApp.Pages.Leadership.IndexModel
+@{
+    ViewData["Title"] = "Leadership";
+}
+
+<br>
+<h2>Leadership</h2>
+<a class='btn btn-primary btn-sm bg-warning text-black border-warning' href='/Leadership/Create'>Add Leader</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>First</th>
+            <th>Last</th>
+            @*<th>Phone</th>*@
+            <th>Email</th>
+            <th>Title</th>
+            <th>Company</th>
+            @*<th>Company ID</th>
+            <th>Office ID</th>
+            <th>Address</th>
+            <th>Office Phone</th>
+            <th>Is Active</th>*@
+            <th>Action</th>            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listLeadership)
+        {
+            <tr>
+                <td>@item.Employee_id</td>
+                <td>@item.First_name</td>
+                <td>@item.Last_name</td>
+                @*<td>@item.Mobile_phone</td>*@
+                <td>@item.Email_address</td>
+                <td>@item.Title</td>
+                <td>@item.Company_name</td>
+                @*<td>@item.Company_id</td>
+                <td>@item.Office_id</td>
+                <td>@item.Office_address</td>
+                <td>@item.Office_phone</td>
+                <td>@item.Is_active</td>*@
+                <td>
+                    <a class="btn btn-primary btn-sm bg-warning text-black border-warning" href="/Leadership/Edit?id=@item.Employee_id">Edit</a>
+                    <a class="btn btn-danger btn-sm" href="/Leadership/Delete?id=@item.Employee_id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

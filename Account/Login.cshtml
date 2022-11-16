@@ -1,0 +1,45 @@
+﻿@page
+@model LeadershipUI.Pages.Account.LoginModel
+@{
+}
+
+<center><img id="Image1" src="~/lib/RN_BusinessUnits.jpg" /></center>
+<br />
+<center><h1>Leadership Admin Site</h1></center>
+<br />
+@*@if (Model.errorMessage.Length > 0)
+{
+    <div class="alert alert-warning alert-dismissable fade show" role="alert">
+        <center><strong>@Model.errorMessage</strong></center>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}*@
+<div class="container" style="padding:20px;text-align:right">
+    <form method="post">
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <div class="form-group row">
+            <div class="col-4">
+                <label asp-for="Credential.Username"></label>
+            </div>
+            <div class="col-5">
+                <input type="text" class="form-control" asp-for="Credential.Username"/>
+            </div>
+            <span class="text-danger" asp-validation-for="Credential.Username"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-4">
+                <label asp-for ="Credential.Password"></label>
+            </div>
+            <div class="col-5">
+                <input type="password" class="form-control" asp-for="Credential.Password" />
+            </div>
+            <span class="text-danger" asp-validation-for="Credential.Password"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-4">
+                <input type="submit" class="btn btn-warning" value="Login" />
+            </div>
+        </div>
+    </form>
+</div>
+    
